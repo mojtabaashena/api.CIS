@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
+namespace api.CIS.Data
+{
+    public class CisDbContext : DbContext
+    {
+
+        public CisDbContext(DbContextOptions<CisDbContext> options) : base(options) { }
+
+    }
+}
