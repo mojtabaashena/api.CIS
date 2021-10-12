@@ -10,6 +10,18 @@ namespace api.CIS.Controllers
     [Route("[controller]")]
     public class DashboardController : ControllerBase
     {
-        public 
+       private Services.IDashboardService _dashboardService;
+
+        public DashboardController(Services.IDashboardService  dashboardService)
+        {
+            _dashboardService = dashboardService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get(int doctorID)
+        {
+            IEnumerable<Models.PrescriptionCount> prescriptionCounts = await _dashboardService.GetPrescriptionCount(doctorID);
+            return Ok(prescriptionCounts.ToList());
+        }
     }
 }

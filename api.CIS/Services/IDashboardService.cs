@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace api.CIS.Services
 {
 
-    interface IDashboardService
+   public interface IDashboardService
     {
         public Task<IEnumerable<Models.PrescriptionCount>> GetPrescriptionCount(int DoctorId);
     }
